@@ -1,0 +1,652 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>模板</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/my-app.css">
+</head>
+<body>
+<!--状态栏目遮罩层-->
+<div class="statusbar-overlay"></div>
+<!--侧边栏遮罩层-->
+<div class="panel-overlay"></div>
+<!--左边栏-->
+<div class="panel panel-left panel-reveal">
+    <div class="content-block">
+        <p>侧边栏</p>
+    </div>
+</div>
+<!--右侧边栏-->
+<div class="panel panel-right panel-cover">
+    <div class="content-block">
+        <p>侧边栏</p>
+    </div>
+</div>
+
+<div class="views tabs toolbar-through">
+    <!--主view-->
+    <div id="view-1" class="view view-main tab active">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center">
+                    web高级前端工程师
+                </div>
+                <div class="right">
+                    <a href="#" class="open-panel" data-panel=".panel-left">
+                        <i class="icon icon-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <div data-page="index-1" class="page">
+                <!--搜索框开始-->
+                <form class="searchbar searchbar-init" data-search-list=".list-block-search"
+                      data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
+                    <div class="searchbar-input">
+                        <input type="search" placeholder="查询">
+                        <a href="#" class="searchbar-clear"></a>
+                    </div>
+                    <a href="#" class="searchbar-cancel">取消</a>
+                </form>
+                <div class="searchbar-overlay"></div>
+                <!--搜索框结束-->
+                <div class="page-content" data-ptr-distance="55">
+                    <!--查询内容的开始-->
+                    <div class="searchbar-not-found">
+                        <div class="content-block">
+                            <p class="content-block-inner">没有找到相关信息</p>
+                        </div>
+                    </div>
+                    <div class="list-block media-list list-block-search search-found" ng-controller="myOne">
+                        <!--1. 控制器开始位置 ng-controller="myCtrl"-->
+                        <ul>
+                            <li class="swipeout">
+                                <a href="baseInfo.html" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/h5-active.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    html5
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                超文本标记语言
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/css-active.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    css
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                层叠样式表是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/js-active.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    javascript
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/i-f7-ios.png" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    framework7
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                淘宝研发的前端app框架
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/app-active.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    appframework
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                现在是intel公司旗下的app前端框架
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/github.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    github社区
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                Git是一个分布式的版本控制系统
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/plugin.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    jquery
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                写的更少,做的更多
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swipeout">
+                                <a href="#" class="item-link">
+                                    <div class="swipeout-content item-content">
+                                        <div class="item-media">
+                                            <img src="img/frame.svg" width="44">
+                                        </div>
+                                        <div class="item-inner">
+                                            <div class="item-title-row">
+                                                <div class="item-title">
+                                                    angularJS
+                                                </div>
+                                            </div>
+                                            <div class="item-subtitle">
+                                                下一代web开发语言
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swipeout-actions-right">
+                                        <a href="#" class="action2">详情</a>
+                                        <a href="#" class="swipeout-delete">删除</a>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--第二个view-->
+    <div id="view-2" class="view tab view-2">
+        <!--导航栏-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center sliding">爱篮球没理由</div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <div data-page="index-2" class="page">
+                <div class="page-content">
+                    <div class="">
+                        <div class="buttons-row">
+                            <a href="#tab1" class="button active tab-link">通话记录</a>
+                            <a href="#tab2" class="button tab-link">短信</a>
+                            <a href="#tab3" class="button tab-link">联系人</a>
+                        </div>
+                        <div class="tabs">
+                            <div id="tab1" class="tab active">
+                                <!--链接-->
+                                <div class="list-block">
+                                    <ul>
+                                        <li>
+                                            <a href="baseInfo.html" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title">关于我</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="services.html" class="item-link">
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title">服务</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="tab2" class="tab">
+                                <!-- Slider -->
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><span>Slide 1</span></div>
+                                        <div class="swiper-slide"><span>Slide 2</span></div>
+                                        <div class="swiper-slide"><span>Slide 3</span></div>
+                                        <div class="swiper-slide"><span>Slide 4</span></div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div id="tab3" class="tab">
+                                <div class="content-block">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-3" class="view tab">
+        <!--导航栏-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center sliding">关于我</div>
+            </div>
+        </div>
+        <div class="pages navbar-through">
+            <div data-page="index-2" class="page">
+                <div class="page-content">
+                    <div class="content-block">
+                        <p>
+                            这是第三个view
+                        </p>
+                    </div>
+                    <!--链接-->
+                    <div class="list-block">
+                        <ul>
+                            <li><a href="about.html" class="item-link">
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">关于我</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="services.html" class="item-link">
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title">服务</div>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="view-4" class="view tab">
+        <div class="pages navbar-fixed">
+            <div data-page="index-4" class="page">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="center">设置</div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Name</div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="Your name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">E-mail</div>
+                                        <div class="item-input">
+                                            <input type="email" placeholder="E-mail">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-url"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">URL</div>
+                                        <div class="item-input">
+                                            <input type="url" placeholder="URL">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Password</div>
+                                        <div class="item-input">
+                                            <input type="password" placeholder="Password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-tel"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Phone</div>
+                                        <div class="item-input">
+                                            <input type="tel" placeholder="Phone">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Gender</div>
+                                        <div class="item-input">
+                                            <select>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Birth date</div>
+                                        <div class="item-input">
+                                            <input type="date" placeholder="Birth day" value="2014-04-30">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Switch</div>
+                                        <div class="item-input">
+                                            <label class="label-switch">
+                                                <input type="checkbox">
+                                                <div class="checkbox"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">Slider</div>
+                                        <div class="item-input">
+                                            <div class="range-slider">
+                                                <input type="range" min="0" max="100" value="50" step="0.1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部工具栏-->
+    <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="#view-1" class="tab-link active">
+                <i class="icon tabbar-demo-icon-1"></i>
+                <span class="tabbar-label">大前端</span>
+            </a>
+            <a href="#view-2" class="tab-link tab2">
+                <i class="icon tabbar-demo-icon-2"></i>
+                <span class="tabbar-label">运动</span>
+            </a>
+            <a href="#view-3" class="tab-link">
+                <i class="icon tabbar-demo-icon-3">
+                    <span class="badge bg-red">5</span>
+                </i>
+                <span class="tabbar-label">我</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!--第一个界面,点击加号的弹出信息-->
+<div class="popover popoverPlus">
+    <div class="popover-angle">
+
+    </div>
+    <div class="popover-inner">
+        <div class="list-block">
+            <ul>
+                <li>
+                    <a href="#" class="item-link open-popup close-popover" data-popup=".popup-message">
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-tel"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    发起群聊
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a id="addPeople" href="#" data-picker=".picker-1" class="item-link close-popover open-picker">
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-comment"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    添加朋友
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-link close-popover">
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-email"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    扫一扫
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="item-link login-modal close-popover">
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-gender"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    收付款给
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--窗口 popup-->
+<div class="popup popup-message">
+    <div class="content-block">
+        <div class="right" style="float: right">
+            <a href="#" class="close-popup">X</a>
+        </div>
+        <h3>选择联系人</h3>
+        <div class="list-block" ng-controller="contacts">
+            <ul>
+                <li ng-repeat="name in names">
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">{{name.name}}</div>
+                            <div class="item-input">
+                                <label class="label-switch">
+                                    <input type="checkbox">
+                                    <div class="checkbox"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="link button close-popup button-fill" data-popup=".popup-message">确定</a>
+    </div>
+</div>
+
+<!--下面弹出半截框-->
+<div class="picker-modal picker-1">
+    <div class="toolbar">
+        <div class="toolbar-inner">
+            <div class="left"></div>
+            <div class="right"><a href="#" class="close-picker">关闭</a></div>
+        </div>
+    </div>
+    <div class="picker-modal-inner">
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="icon icon-form-name"></i>
+                        </div>
+                        <div class="item-inner">
+                            <input type="text" name="username" placeholder="用户名称"/>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="icon icon-form-calendar"></i>
+                        </div>
+                        <div class="item-inner">
+                            <input type="password" name="password" placeholder="密码"/>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <br/>
+            <a href="#" class="link button button-fill close-picker">确定</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/angular-1.4.8.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/my-angular.js"></script>
+</body>
+</html>
